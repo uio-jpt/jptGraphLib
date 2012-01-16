@@ -1,11 +1,6 @@
 template GraphConceptImplementations {
 
-	inst GraphConcepts with 
-		Edge <= adj_list_edge, 
-		EdgeIterator <= java.util.Iterator<adj_list_edge>, 
-		OutEdgeIterator <= java.util.Iterator<adj_list_edge>, 
-		VertexIterator <= java.util.Iterator<Vertex>;
-	 
+	inst GraphConcepts with Edge <= adj_list_edge; 
 	
 	class adj_list_edge {
 	  private Vertex source_, target_;

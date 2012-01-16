@@ -4,60 +4,12 @@
 
 package Program {
 	
-	inst Algorithms	with IncidenceGraph <= MyIncidenceGraph, 
-		EdgeListGraph <= MyEdgeListGraph,
-		VertexListGraph <= MyVertexListGraph,
-		VertexListAndIncidenceGraph <= MyVertexListAndIncidenceGraph,
-		VertexListAndIncidenceAndEdgeListGraph <= MyVertexListAndIncidenceAndEdgeListGraph,
+	inst Algorithms	with 
 	 	Vertex <= Integer, 
-		Edge <= adj_list_edge, 
-		EdgeIterator <= java.util.Iterator<adj_list_edge>, 
-		OutEdgeIterator <= java.util.Iterator<adj_list_edge>, 
-		VertexIterator <= java.util.Iterator<Integer>,
-		Visitor <= MyVisitor;
+		Edge <= adj_list_edge;		
 	
 	inst GraphConceptImplementations;
-		
-	
-	interface MyVisitor  {
-	  void initialize_vertex(Integer u, MyIncidenceGraph g);
-	  void discover_vertex(Integer u, MyIncidenceGraph g);
-	  void examine_edge(adj_list_edge e, MyIncidenceGraph g);
-	  void tree_edge(adj_list_edge e, MyIncidenceGraph g);
-	  void non_tree_edge(adj_list_edge e, MyIncidenceGraph g);
-	  void gray_target(adj_list_edge e, MyIncidenceGraph g);
-	  void black_target(adj_list_edge e, MyIncidenceGraph g);
-	  void finish_vertex(Integer u, MyIncidenceGraph g);
-	}
-	
-	interface MyIncidenceGraph 
-	{
-		java.util.Iterator<adj_list_edge> out_edges(Integer v);
-		int out_degree(Integer v);
-	}
-
-	interface MyEdgeListGraph 
-	{
-	    java.util.Iterator<adj_list_edge> edges();
-	}
-
-	interface MyVertexListGraph 
-	{
-	  java.util.Iterator<Integer> vertices();
-	  int num_vertices();
-	}
-
-	interface MyVertexListAndIncidenceGraph 
-	  extends 
-	    MyVertexListGraph,
-	    MyIncidenceGraph {}
-
-	interface MyVertexListAndIncidenceAndEdgeListGraph
-	  extends 
-	    MyVertexListAndIncidenceGraph,
-	    MyEdgeListGraph {}
-		
-
+			
 	public class bfs_test {
 	  public static void main(String[] args) {
 	    adjacency_list g = new adjacency_list();

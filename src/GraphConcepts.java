@@ -8,7 +8,7 @@
 
 template GraphConcepts {
 	
- 	required type Vertex extends Object { }
+ 	required type Vertex { }
 	required type Edge { 
 		Vertex source(); 
 		Vertex target();

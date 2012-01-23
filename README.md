@@ -9,7 +9,7 @@ Compile the source code with the JPT compiler: https://github.com/uio-jpt/pt-com
 
 
 LICENSE
-=========
+=======
 
 Copyright 2012 © The SWAT project, OMS Group, Department of Informatics, 
 University of Oslo.
